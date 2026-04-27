@@ -15,7 +15,7 @@ export default function Home() {
           playsInline
           className="w-full h-full object-cover opacity-100 brightness-50"
         >
-          <source src="/bg.mp4" type="video/mp4" />
+          <source src="bg.mp4" type="video/mp4" />
         </video>
         {/* Overlay para suavizar o vídeo e dar contraste ao texto */}
         <div className="absolute inset-0 bg-linear-to-b from-bg/0 via-bg/50 to-bg"></div>
