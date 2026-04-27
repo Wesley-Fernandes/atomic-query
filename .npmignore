@@ -1,0 +1,7 @@
+src/
+test/
+docs/
+node_modules/
+*.config.mjs
+tsconfig*.json
+.prettierrc

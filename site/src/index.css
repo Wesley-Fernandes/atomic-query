@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #030014;
+  --color-primary: #4b00ff;
+  --color-secondary: #2e00a3;
+  --color-accent: #00f2ff;
+  --color-glass-border: rgba(255, 255, 255, 0.1);
+  --font-headings: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --background-image-hero-gradient: radial-gradient(circle at 50% -20%, #1a005c 0%, #030014 70%);
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-gray-200 antialiased font-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headings tracking-tight;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #030014;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1a005c;
+    border-radius: 10px;
+    border: 2px solid #030014;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4b00ff;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent font-headings;
+  }
+  .btn {
+    @apply px-6 py-2 rounded-full font-semibold transition-all duration-300 inline-flex items-center gap-2;
+  }
+  .btn-primary {
+    @apply bg-primary hover:bg-primary/80 text-white shadow-[0_0_20px_rgba(75,0,255,0.4)] hover:shadow-[0_0_30px_rgba(75,0,255,0.6)];
+  }
+  .btn-secondary {
+    @apply border border-glass-border hover:bg-white/10 text-white;
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 15s linear infinite;
+  }
+
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
