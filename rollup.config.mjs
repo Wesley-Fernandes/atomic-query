@@ -12,9 +12,7 @@ export default [
       format: 'esm',
       sourcemap: true,
     },
-    plugins: [
-      typescript({ tsconfig: './tsconfig.build.json', declaration: false }),
-    ],
+    plugins: [typescript({ tsconfig: './tsconfig.build.json', declaration: false })],
     external: ['react'],
   },
   // CJS build
@@ -25,9 +23,7 @@ export default [
       format: 'cjs',
       sourcemap: true,
     },
-    plugins: [
-      typescript({ tsconfig: './tsconfig.build.json', declaration: false }),
-    ],
+    plugins: [typescript({ tsconfig: './tsconfig.build.json', declaration: false })],
     external: ['react'],
   },
   // Type declarations

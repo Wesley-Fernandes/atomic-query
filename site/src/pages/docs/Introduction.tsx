@@ -9,8 +9,10 @@ export default function Introduction() {
     <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
       <h1 className="text-4xl font-bold mb-4">Introdução</h1>
       <p className="text-gray-400 text-lg leading-relaxed mb-8">
-        A <strong>Atomic Query</strong> é uma solução de camada de rede moderna, focada em segurança, transparência e performance. 
-        Diferente de outras bibliotecas que trazem um emaranhado de sub-dependências, nós entregamos tudo o que você precisa usando apenas APIs nativas do navegador.
+        A <strong>Atomic Query</strong> é uma solução de camada de rede moderna, focada em
+        segurança, transparência e performance. Diferente de outras bibliotecas que trazem um
+        emaranhado de sub-dependências, nós entregamos tudo o que você precisa usando apenas APIs
+        nativas do navegador.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">

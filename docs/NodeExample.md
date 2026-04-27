@@ -59,7 +59,7 @@ import { sseStream } from 'atomic-query';
 // Exemplo em um handler do Express/Fastify
 async function handleChatStream(req, res) {
   res.setHeader('Content-Type', 'text/event-stream');
-  
+
   try {
     for await (const chunk of sseStream('https://ai-provider.com/v1/chat')) {
       res.write(`data: ${chunk}\n\n`);
@@ -84,7 +84,7 @@ atom.use(loggerMiddleware());
 
 // Isso é seguro mesmo em produção
 const res = await atom.get('/secure-data', {
-  headers: { 'X-API-Key': 'secret_12345' }
+  headers: { 'X-API-Key': 'secret_12345' },
 });
 // Log: Options: { headers: { 'X-API-Key': '********' } }
 ```

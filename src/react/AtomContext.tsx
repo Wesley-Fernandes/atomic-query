@@ -13,11 +13,7 @@ export interface AtomProviderProps {
  * Provedor que injeta uma instância customizada do Atomic Query em toda a árvore React.
  */
 export function AtomProvider({ instance, children }: AtomProviderProps) {
-  return (
-    <AtomContext.Provider value={instance}>
-      {children}
-    </AtomContext.Provider>
-  );
+  return <AtomContext.Provider value={instance}>{children}</AtomContext.Provider>;
 }
 
 /**

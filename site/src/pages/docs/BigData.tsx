@@ -10,7 +10,9 @@ export default function BigData() {
         Big Data Engine <Database className="text-accent w-8 h-8" />
       </h1>
       <p className="text-gray-400 text-lg leading-relaxed mb-8">
-        Domine datasets de Gigabytes diretamente no navegador. A Atomic Query utiliza <strong>Binary Chunk Identification</strong> para fatiar JSONs massivos sem nunca carregar o arquivo completo na RAM.
+        Domine datasets de Gigabytes diretamente no navegador. A Atomic Query utiliza{' '}
+        <strong>Binary Chunk Identification</strong> para fatiar JSONs massivos sem nunca carregar o
+        arquivo completo na RAM.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
@@ -42,7 +44,10 @@ export default function BigData() {
             <Layers className="text-primary" /> Como funciona?
           </h4>
           <p className="text-sm text-gray-400 leading-relaxed">
-            Diferente do <code>JSON.parse()</code> tradicional que exige o conteúdo completo em uma string, nosso motor de streaming analisa os bytes brutos da rede. Ele identifica os caracteres delimitadores <code>{'{'}</code> e <code>{'}'}</code> para isolar cada objeto do array, emitindo-os para o seu loop assim que o último byte do objeto chega.
+            Diferente do <code>JSON.parse()</code> tradicional que exige o conteúdo completo em uma
+            string, nosso motor de streaming analisa os bytes brutos da rede. Ele identifica os
+            caracteres delimitadores <code>{'{'}</code> e <code>{'}'}</code> para isolar cada objeto
+            do array, emitindo-os para o seu loop assim que o último byte do objeto chega.
           </p>
         </div>
 
@@ -51,7 +56,9 @@ export default function BigData() {
             <ShieldAlert /> Alerta de Performance
           </h4>
           <p className="text-sm text-gray-400 leading-relaxed">
-            Mesmo que o <code>jsonStream</code> evite o crash de memória na leitura, renderizar 1 milhão de elementos no React ainda vai travar a aba. Combine esta técnica com <strong>Virtual Lists</strong> ou salve os dados no IndexedDB para acesso sob demanda.
+            Mesmo que o <code>jsonStream</code> evite o crash de memória na leitura, renderizar 1
+            milhão de elementos no React ainda vai travar a aba. Combine esta técnica com{' '}
+            <strong>Virtual Lists</strong> ou salve os dados no IndexedDB para acesso sob demanda.
           </p>
         </div>
       </div>

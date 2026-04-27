@@ -17,7 +17,7 @@ export default function CodeBlock({ code, language = 'typescript', filename }: C
         background: '#1a005c',
         border: '1px solid #4b00ff',
         color: '#fff',
-      }
+      },
     });
   };
 
@@ -33,7 +33,7 @@ export default function CodeBlock({ code, language = 'typescript', filename }: C
           </div>
           {filename && <span className="text-xs text-gray-400 font-mono">{filename}</span>}
         </div>
-        
+
         {/* Botão de Copiar no Topo Direito */}
         <button
           onClick={copyToClipboard}
@@ -56,7 +56,7 @@ export default function CodeBlock({ code, language = 'typescript', filename }: C
           lineHeight: '1.6',
         }}
         codeTagProps={{
-          style: { fontFamily: '"JetBrains Mono", monospace' }
+          style: { fontFamily: '"JetBrains Mono", monospace' },
         }}
       >
         {code.trim()}

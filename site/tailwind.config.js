@@ -1,9 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       colors: {
@@ -19,8 +16,8 @@ export default {
       },
       backgroundImage: {
         'hero-gradient': 'radial-gradient(circle at 50% -20%, #240046 0%, #030014 70%)',
-      }
-    }
+      },
+    },
   },
   plugins: [],
-}
+};

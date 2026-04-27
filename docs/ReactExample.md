@@ -7,17 +7,24 @@ Este exemplo demonstra como utilizar a **Atom** em uma aplicação React real, a
 O ideal é criar uma instância centralizada para que o cache e o gerenciador de queries sejam compartilhados por toda a aplicação.
 
 ```tsx
-import { createProductionAtom, IDBCacheStore, cacheMiddleware, loggerMiddleware } from 'atomic-query';
+import {
+  createProductionAtom,
+  IDBCacheStore,
+  cacheMiddleware,
+  loggerMiddleware,
+} from 'atomic-query';
 
 export const api = createProductionAtom({
   baseUrl: 'https://api.meu-app.com',
 });
 
 // Ativa o cache persistente no IndexedDB
-api.use(cacheMiddleware({
-  ttl: 1000 * 60 * 5, // 5 minutos
-  store: new IDBCacheStore('meu-app-db')
-}));
+api.use(
+  cacheMiddleware({
+    ttl: 1000 * 60 * 5, // 5 minutos
+    store: new IDBCacheStore('meu-app-db'),
+  }),
+);
 
 // Logger para debug (desabilitado sanitização em dev)
 api.use(loggerMiddleware({ devMode: process.env.NODE_ENV === 'development' }));
@@ -25,7 +32,7 @@ api.use(loggerMiddleware({ devMode: process.env.NODE_ENV === 'development' }));
 
 ## 2. Componente de Lista (`UserList.tsx`)
 
-Usando o hook `useAtom` para buscar dados com suporte a *Refetch on Window Focus*.
+Usando o hook `useAtom` para buscar dados com suporte a _Refetch on Window Focus_.
 
 ```tsx
 import React from 'react';
@@ -43,7 +50,7 @@ export function UserList() {
     <div>
       <h1>Usuários</h1>
       <ul>
-        {users?.map(user => (
+        {users?.map((user) => (
           <li key={user.id}>{user.name}</li>
         ))}
       </ul>
@@ -66,15 +73,15 @@ export function AddUser() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     try {
       // 1. Faz o POST para criar o usuário
       await api.post('/users', { name });
-      
+
       // 2. Invalida a query de lista
       // Isso avisa instantaneamente o componente UserList para recarregar!
       await api.query.invalidate('/users');
-      
+
       setName('');
       alert('Usuário adicionado!');
     } catch (err) {
@@ -84,7 +91,7 @@ export function AddUser() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input value={name} onChange={e => setName(e.target.value)} placeholder="Nome" />
+      <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Nome" />
       <button type="submit">Adicionar Usuário</button>
     </form>
   );
@@ -98,11 +105,13 @@ Se você quiser uma interface ainda mais rápida, pode trocar os dados manualmen
 ```tsx
 const handleUpdateName = async (id, newName) => {
   const oldUsers = await api.query.store.get('/users');
-  
+
   // Atualiza a UI instantaneamente
-  const optimisticUsers = oldUsers.response.data.map(u => u.id === id ? { ...u, name: newName } : u);
+  const optimisticUsers = oldUsers.response.data.map((u) =>
+    u.id === id ? { ...u, name: newName } : u,
+  );
   await api.query.setData('/users', optimisticUsers);
-  
+
   try {
     await api.patch(`/users/${id}`, { name: newName });
   } catch (err) {

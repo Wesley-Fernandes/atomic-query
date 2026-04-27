@@ -2,6 +2,9 @@
 
 **Segurança máxima. Zero dependências. Performance pura.**
 
+[Documentação Online](https://wesley-fernandes.github.io/atomic-query)
+
+
 A Atomic Query é uma biblioteca de requisições HTTP ultra-leve, funcional e — acima de tudo — **segura**. Enquanto outras bibliotecas arrastam centenas de dependências (e os riscos que vêm com elas), a Atomic Query foi construída do zero utilizando apenas as APIs nativas do motor JavaScript moderno.
 
 ---
@@ -44,7 +47,12 @@ const { data } = await atom.get<User[]>('/users');
 Crie instâncias robustas com resiliência de nível enterprise em segundos:
 
 ```ts
-import { createProductionAtom, loggerMiddleware, cacheMiddleware, IDBCacheStore } from 'atomic-query';
+import {
+  createProductionAtom,
+  loggerMiddleware,
+  cacheMiddleware,
+  IDBCacheStore,
+} from 'atomic-query';
 
 const api = createProductionAtom({
   baseUrl: 'https://api.example.com',

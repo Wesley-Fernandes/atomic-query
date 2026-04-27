@@ -10,7 +10,10 @@ export interface JsonStreamOptions extends AtomOptions {
  * Utilitário de alta performance para ler JSONs massivos (GBs) sem crashar o browser.
  * Lê o stream e emite objetos à medida que são identificados.
  */
-export async function* jsonStream<T = any>(url: string, opts: JsonStreamOptions = {}): AsyncGenerator<T> {
+export async function* jsonStream<T = any>(
+  url: string,
+  opts: JsonStreamOptions = {},
+): AsyncGenerator<T> {
   const { baseUrl, params, ndjson = false, ...fetchOptions } = opts;
   const fullUrl = buildUrl(url, baseUrl, params);
 
@@ -18,7 +21,7 @@ export async function* jsonStream<T = any>(url: string, opts: JsonStreamOptions 
     ...fetchOptions,
     method: fetchOptions.method ?? 'GET',
     headers: {
-      'Accept': 'application/json, application/x-ndjson',
+      Accept: 'application/json, application/x-ndjson',
       ...(fetchOptions.headers as Record<string, string>),
     },
   });
@@ -44,7 +47,11 @@ export async function* jsonStream<T = any>(url: string, opts: JsonStreamOptions 
         for (const line of lines) {
           const trimmed = line.trim();
           if (trimmed) {
-            try { yield JSON.parse(trimmed); } catch (e) { console.warn('Atom: Failed to parse NDJSON line', e); }
+            try {
+              yield JSON.parse(trimmed);
+            } catch (e) {
+              console.warn('Atom: Failed to parse NDJSON line', e);
+            }
           }
         }
       } else {
@@ -82,7 +89,7 @@ export async function* jsonStream<T = any>(url: string, opts: JsonStreamOptions 
             }
           }
         }
-        
+
         // Remove do buffer o que já foi processado
         if (startIdx > 0) {
           buffer = buffer.slice(startIdx);

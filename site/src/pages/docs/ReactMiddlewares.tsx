@@ -12,7 +12,9 @@ export default function ReactMiddlewares() {
         Middlewares no React <Settings className="text-primary w-8 h-8" />
       </h1>
       <p className="text-gray-400 text-lg leading-relaxed mb-8">
-        No ecossistema React, os middlewares agem como uma camada de segurança invisível. Ao configurar sua instância no <code>AtomProvider</code>, cada hook <code>useAtom</code> passa a respeitar automaticamente suas regras de negócio.
+        No ecossistema React, os middlewares agem como uma camada de segurança invisível. Ao
+        configurar sua instância no <code>AtomProvider</code>, cada hook <code>useAtom</code> passa
+        a respeitar automaticamente suas regras de negócio.
       </p>
 
       <div className="space-y-12">
@@ -21,7 +23,8 @@ export default function ReactMiddlewares() {
             <Lock className="text-primary w-6 h-6" /> 1. Autenticação Dinâmica
           </h2>
           <p className="text-gray-400 mb-4">
-            O middleware de autenticação é o caso de uso mais comum. Ele intercepta a requisição antes dela sair e injeta o token atualizado.
+            O middleware de autenticação é o caso de uso mais comum. Ele intercepta a requisição
+            antes dela sair e injeta o token atualizado.
           </p>
           <CodeBlock code={authCode} filename="middlewares/auth.ts" />
         </section>
@@ -31,7 +34,8 @@ export default function ReactMiddlewares() {
             <Shield className="text-accent w-6 h-6" /> 2. O Coração da App
           </h2>
           <p className="text-gray-400 mb-4">
-            Conecte sua instância configurada ao Provider para que todo o seu grafo de componentes seja protegido.
+            Conecte sua instância configurada ao Provider para que todo o seu grafo de componentes
+            seja protegido.
           </p>
           <CodeBlock code={providerCode} filename="App.tsx" language="tsx" />
         </section>
@@ -41,7 +45,8 @@ export default function ReactMiddlewares() {
             <Activity className="text-primary mb-4 w-6 h-6" />
             <h3 className="text-xl font-bold mb-2">Monitoramento</h3>
             <p className="text-sm text-gray-400">
-              Use middlewares para enviar métricas de performance para ferramentas como Sentry ou Datadog sempre que um componente React disparar uma query.
+              Use middlewares para enviar métricas de performance para ferramentas como Sentry ou
+              Datadog sempre que um componente React disparar uma query.
             </p>
           </div>
 
@@ -49,7 +54,9 @@ export default function ReactMiddlewares() {
             <AlertCircle className="text-red-500 mb-4 w-6 h-6" />
             <h3 className="text-xl font-bold mb-2">Intercepção de Erros</h3>
             <p className="text-sm text-gray-400">
-              Capture erros 401 globalmente e dispare um <code>window.location.href = '/login'</code> de dentro do middleware, centralizando o controle de acesso.
+              Capture erros 401 globalmente e dispare um{' '}
+              <code>window.location.href = '/login'</code> de dentro do middleware, centralizando o
+              controle de acesso.
             </p>
           </div>
         </div>

@@ -8,10 +8,10 @@ export default function Home() {
     <div className="relative min-h-screen bg-bg overflow-hidden text-white">
       {/* 1. Video Background - Dinâmico e Cinematográfico */}
       <div className="absolute inset-0 z-0">
-        <video 
-          autoPlay 
-          loop 
-          muted 
+        <video
+          autoPlay
+          loop
+          muted
           playsInline
           className="w-full h-full object-cover opacity-100 brightness-50"
         >
@@ -34,12 +34,16 @@ export default function Home() {
                 <span className="gradient-text">Requisições HTTP</span>
               </h1>
               <p className="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-                Segurança atômica com zero dependências. O motor de busca e cache definitivo para aplicações que levam a infraestrutura a sério.
+                Segurança atômica com zero dependências. O motor de busca e cache definitivo para
+                aplicações que levam a infraestrutura a sério.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-6 pt-8 justify-center items-center">
                 <InstallBadge />
-                <Link to="/docs" className="btn btn-primary h-[58px] px-10 text-lg flex items-center">
+                <Link
+                  to="/docs"
+                  className="btn btn-primary h-[58px] px-10 text-lg flex items-center"
+                >
                   Ver Documentação <ArrowRight className="w-6 h-6" />
                 </Link>
               </div>
@@ -80,7 +84,7 @@ export default function Home() {
         <section id="code-demo" className="pb-24 bg-transparent">
           <div className="container mx-auto px-6 flex justify-center">
             <div className="w-full max-w-3xl">
-              <CodeBlock 
+              <CodeBlock
                 filename="useAtom.tsx"
                 language="tsx"
                 code={`import { useAtom } from 'atomic-query';\n\nfunction Profile() {\n  const { data, loading } = useAtom('/user');\n\n  if (loading) return <Spinner />;\n  return <div>Olá, {data.name}</div>;\n}`}
@@ -93,7 +97,15 @@ export default function Home() {
   );
 }
 
-function FeatureCard({ icon, title, description }: { icon: any, title: string, description: string }) {
+function FeatureCard({
+  icon,
+  title,
+  description,
+}: {
+  icon: any;
+  title: string;
+  description: string;
+}) {
   return (
     <div className="glass p-8 rounded-3xl hover:-translate-y-2 transition-all duration-300">
       <div className="mb-4">{icon}</div>

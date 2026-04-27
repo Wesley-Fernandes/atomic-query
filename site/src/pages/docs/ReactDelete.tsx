@@ -11,7 +11,8 @@ export default function ReactDelete() {
         Delete & Reset <Trash2 className="text-red-500 w-8 h-8" />
       </h1>
       <p className="text-gray-400 text-lg leading-relaxed mb-8">
-        Existem duas formas de remover dados do cache: apagar uma entrada específica ou realizar um reset total do sistema de armazenamento.
+        Existem duas formas de remover dados do cache: apagar uma entrada específica ou realizar um
+        reset total do sistema de armazenamento.
       </p>
 
       <div className="space-y-12">
@@ -20,7 +21,8 @@ export default function ReactDelete() {
             <Trash2 className="w-5 h-5 text-red-400" /> Remover Chave Única
           </h2>
           <p className="text-gray-400 mb-4">
-            O método <code>remove</code> limpa os dados de uma query específica. Ideal para quando um recurso é deletado individualmente.
+            O método <code>remove</code> limpa os dados de uma query específica. Ideal para quando
+            um recurso é deletado individualmente.
           </p>
           <CodeBlock code={removeCode} />
         </section>
@@ -30,7 +32,9 @@ export default function ReactDelete() {
             <Eraser className="w-5 h-5 text-red-500" /> Limpar Todo o Cache (Clear)
           </h2>
           <p className="text-gray-400 mb-4">
-            O método <code>clear</code> é a "opção nuclear". Ele esvazia completamente a Store ativa (seja ela em memória ou IndexedDB) e notifica todos os componentes React para resetarem seu estado.
+            O método <code>clear</code> é a "opção nuclear". Ele esvazia completamente a Store ativa
+            (seja ela em memória ou IndexedDB) e notifica todos os componentes React para resetarem
+            seu estado.
           </p>
           <CodeBlock code={clearCode} />
           <p className="text-xs text-red-400/60 mt-4">

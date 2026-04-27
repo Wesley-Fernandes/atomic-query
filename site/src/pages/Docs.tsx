@@ -1,5 +1,21 @@
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
-import { ChevronRight, Book, Shield, Database, Radio, Layout, Zap, Edit3, Trash2, RotateCcw, Settings, HardDrive, Rocket, RefreshCcw, Layers } from 'lucide-react';
+import {
+  ChevronRight,
+  Book,
+  Shield,
+  Database,
+  Radio,
+  Layout,
+  Zap,
+  Edit3,
+  Trash2,
+  RotateCcw,
+  Settings,
+  HardDrive,
+  Rocket,
+  RefreshCcw,
+  Layers,
+} from 'lucide-react';
 
 // Core Docs
 import Introduction from './docs/Introduction';
@@ -27,7 +43,11 @@ export default function Docs() {
     { name: 'Middlewares', path: '/docs/middlewares', icon: <Settings className="w-4 h-4" /> },
     { name: 'Cache & Persistência', path: '/docs/caching', icon: <Database className="w-4 h-4" /> },
     { name: 'Cache Stores', path: '/docs/stores', icon: <HardDrive className="w-4 h-4" /> },
-    { name: 'Big Data (GBs)', path: '/docs/big-data', icon: <Database className="w-4 h-4 text-accent" /> },
+    {
+      name: 'Big Data (GBs)',
+      path: '/docs/big-data',
+      icon: <Database className="w-4 h-4 text-accent" />,
+    },
     { name: 'Streaming & SSE', path: '/docs/sse', icon: <Radio className="w-4 h-4" /> },
     { name: 'Segurança', path: '/docs/security', icon: <Shield className="w-4 h-4" /> },
     { name: 'Uso Avançado', path: '/docs/advanced', icon: <Rocket className="w-4 h-4" /> },
@@ -35,18 +55,29 @@ export default function Docs() {
 
   const reactItems = [
     { name: 'Hook useAtom', path: '/docs/react', icon: <Zap className="w-4 h-4" /> },
-    { name: 'Injetando Middlewares', path: '/docs/react-middlewares', icon: <Layers className="w-4 h-4" /> },
-    { name: 'Invalidate', path: '/docs/react-invalidate', icon: <RefreshCcw className="w-4 h-4" /> },
+    {
+      name: 'Injetando Middlewares',
+      path: '/docs/react-middlewares',
+      icon: <Layers className="w-4 h-4" />,
+    },
+    {
+      name: 'Invalidate',
+      path: '/docs/react-invalidate',
+      icon: <RefreshCcw className="w-4 h-4" />,
+    },
     { name: 'Update (setData)', path: '/docs/react-update', icon: <Edit3 className="w-4 h-4" /> },
     { name: 'Delete (remove)', path: '/docs/react-delete', icon: <Trash2 className="w-4 h-4" /> },
-    { name: 'Revalidate (refetch)', path: '/docs/react-revalidate', icon: <RotateCcw className="w-4 h-4" /> },
+    {
+      name: 'Revalidate (refetch)',
+      path: '/docs/react-revalidate',
+      icon: <RotateCcw className="w-4 h-4" />,
+    },
   ];
 
   return (
     <div className="pt-20 min-h-screen flex flex-col lg:flex-row">
       {/* Sidebar */}
       <aside className="w-full lg:w-72 border-r border-glass-border p-6 space-y-8 lg:sticky lg:top-20 lg:h-[calc(100vh-80px)] overflow-y-auto bg-bg">
-        
         {/* Core Section */}
         <div>
           <h4 className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] mb-4 px-3 flex items-center gap-2">
@@ -87,7 +118,7 @@ export default function Docs() {
             <Route path="sse" element={<Streaming />} />
             <Route path="security" element={<Security />} />
             <Route path="advanced" element={<Advanced />} />
-            
+
             {/* React Routes */}
             <Route path="react" element={<ReactDoc />} />
             <Route path="react-middlewares" element={<ReactMiddlewares />} />
@@ -96,12 +127,17 @@ export default function Docs() {
             <Route path="react-delete" element={<ReactDelete />} />
             <Route path="react-revalidate" element={<ReactRevalidate />} />
 
-            <Route path="*" element={
-              <div className="py-20 text-center">
-                <h2 className="text-2xl font-bold mb-2">Página em Construção</h2>
-                <Link to="/docs" className="text-primary hover:underline">Voltar para a Introdução</Link>
-              </div>
-            } />
+            <Route
+              path="*"
+              element={
+                <div className="py-20 text-center">
+                  <h2 className="text-2xl font-bold mb-2">Página em Construção</h2>
+                  <Link to="/docs" className="text-primary hover:underline">
+                    Voltar para a Introdução
+                  </Link>
+                </div>
+              }
+            />
           </Routes>
         </div>
       </main>
@@ -109,13 +145,13 @@ export default function Docs() {
   );
 }
 
-function SidebarItem({ item, active }: { item: any, active: boolean }) {
+function SidebarItem({ item, active }: { item: any; active: boolean }) {
   return (
     <Link
       to={item.path}
       className={`flex items-center justify-between px-3 py-2.5 rounded-xl transition-all duration-200 group ${
-        active 
-          ? 'bg-primary/15 text-primary border border-primary/20' 
+        active
+          ? 'bg-primary/15 text-primary border border-primary/20'
           : 'text-gray-400 hover:bg-white/5 hover:text-white'
       }`}
     >

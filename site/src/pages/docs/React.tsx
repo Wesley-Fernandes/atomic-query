@@ -25,7 +25,8 @@ function UserProfile() {
         Integração React <Layout className="text-primary w-8 h-8" />
       </h1>
       <p className="text-gray-400 text-lg leading-relaxed mb-8">
-        Embora a Atomic Query seja agnóstica a frameworks, oferecemos um hook de primeira classe para React que simplifica drasticamente o gerenciamento de estados assíncronos.
+        Embora a Atomic Query seja agnóstica a frameworks, oferecemos um hook de primeira classe
+        para React que simplifica drasticamente o gerenciamento de estados assíncronos.
       </p>
 
       <div className="space-y-6 mb-12">
@@ -35,7 +36,9 @@ function UserProfile() {
           </div>
           <div>
             <h3 className="font-bold mb-1">Refetch on Window Focus</h3>
-            <p className="text-sm text-gray-500">Sincronize os dados automaticamente quando o usuário volta para a aba do navegador.</p>
+            <p className="text-sm text-gray-500">
+              Sincronize os dados automaticamente quando o usuário volta para a aba do navegador.
+            </p>
           </div>
         </div>
 
@@ -45,7 +48,10 @@ function UserProfile() {
           </div>
           <div>
             <h3 className="font-bold mb-1">Reatividade Global</h3>
-            <p className="text-sm text-gray-500">Se o cache for invalidado em qualquer lugar da app, o componente React reflete a mudança na hora.</p>
+            <p className="text-sm text-gray-500">
+              Se o cache for invalidado em qualquer lugar da app, o componente React reflete a
+              mudança na hora.
+            </p>
           </div>
         </div>
       </div>

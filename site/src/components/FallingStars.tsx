@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { loadSlim } from "@tsparticles/slim";
+import { useEffect, useState } from 'react';
+import Particles, { initParticlesEngine } from '@tsparticles/react';
+import { loadSlim } from '@tsparticles/slim';
 
 export default function FallingStars() {
   const [init, setInit] = useState(false);
@@ -23,13 +23,13 @@ export default function FallingStars() {
         fpsLimit: 120,
         particles: {
           color: {
-            value: ["#ffffff", "#4b00ff"],
+            value: ['#ffffff', '#4b00ff'],
           },
           move: {
-            direction: "bottom-right",
+            direction: 'bottom-right',
             enable: true,
             outModes: {
-              default: "out",
+              default: 'out',
             },
             random: false,
             speed: { min: 6, max: 11 }, // Velocidade bem alta para o rastro "esticar" e sumir rápido
@@ -38,8 +38,8 @@ export default function FallingStars() {
               enable: true,
               length: 4, // Rastro mais curto para sumir mais rápido conforme a estrela passa
               fill: {
-                color: "#000000"
-              }
+                color: '#000000',
+              },
             },
           },
           number: {
@@ -54,7 +54,7 @@ export default function FallingStars() {
             value: { min: 0.4, max: 1 },
           },
           shape: {
-            type: "circle",
+            type: 'circle',
           },
           size: {
             value: { min: 1, max: 2 },
@@ -67,13 +67,13 @@ export default function FallingStars() {
         detectRetina: true,
       }}
       style={{
-        position: "absolute",
-        width: "100%",
-        height: "100%",
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
         top: 0,
         left: 0,
         zIndex: 0,
-        pointerEvents: "none"
+        pointerEvents: 'none',
       }}
     />
   );

@@ -21,20 +21,24 @@ function DeleteUser({ id }) {
         Mutações & Invalidação <Zap className="text-primary w-8 h-8" />
       </h1>
       <p className="text-gray-400 text-lg leading-relaxed mb-8">
-        Diferente de outras libs, a Atomic Query não exige um hook específico para mutações. 
-        Você usa o motor da instância para enviar dados e o QueryManager para avisar a UI.
+        Diferente de outras libs, a Atomic Query não exige um hook específico para mutações. Você
+        usa o motor da instância para enviar dados e o QueryManager para avisar a UI.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
         <div className="glass p-6 rounded-2xl">
           <RefreshCcw className="text-primary mb-3" />
           <h3 className="font-bold mb-1">Invalidação Global</h3>
-          <p className="text-sm text-gray-500">Qualquer componente usando a mesma URL será atualizado instantaneamente.</p>
+          <p className="text-sm text-gray-500">
+            Qualquer componente usando a mesma URL será atualizado instantaneamente.
+          </p>
         </div>
         <div className="glass p-6 rounded-2xl">
           <Save className="text-accent mb-3" />
           <h3 className="font-bold mb-1">setData()</h3>
-          <p className="text-sm text-gray-500">Atualize o cache manualmente para uma resposta instantânea na interface.</p>
+          <p className="text-sm text-gray-500">
+            Atualize o cache manualmente para uma resposta instantânea na interface.
+          </p>
         </div>
       </div>
 

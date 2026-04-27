@@ -6,7 +6,8 @@ export default function Stores() {
     <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
       <h1 className="text-4xl font-bold mb-4">Cache Stores</h1>
       <p className="text-gray-400 text-lg leading-relaxed mb-8">
-        A Atomic Query suporta diferentes estratégias de armazenamento. Você pode escolher a que melhor se adapta ao seu ambiente (Browser ou Node.js).
+        A Atomic Query suporta diferentes estratégias de armazenamento. Você pode escolher a que
+        melhor se adapta ao seu ambiente (Browser ou Node.js).
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -16,7 +17,9 @@ export default function Stores() {
           <p className="text-gray-400 text-sm mb-4">
             Padrão para Node.js e SPA. Rápido, mas os dados são perdidos ao atualizar a página.
           </p>
-          <CodeBlock code={`import { MemoryCacheStore } from 'atomic-query';\nconst store = new MemoryCacheStore({ maxSize: 100 });`} />
+          <CodeBlock
+            code={`import { MemoryCacheStore } from 'atomic-query';\nconst store = new MemoryCacheStore({ maxSize: 100 });`}
+          />
         </div>
 
         <div className="glass p-8 rounded-3xl">
@@ -25,7 +28,9 @@ export default function Stores() {
           <p className="text-gray-400 text-sm mb-4">
             Recomendado para Browser. Persistente e assíncrono usando IndexedDB nativo.
           </p>
-          <CodeBlock code={`import { IDBCacheStore } from 'atomic-query';\nconst store = new IDBCacheStore('minha-app-cache');`} />
+          <CodeBlock
+            code={`import { IDBCacheStore } from 'atomic-query';\nconst store = new IDBCacheStore('minha-app-cache');`}
+          />
         </div>
       </div>
     </div>

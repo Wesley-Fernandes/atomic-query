@@ -14,7 +14,7 @@ async function loadData() {
   try {
     const { data } = await atom.get('https://api.example.com/data');
     console.log('Dados carregados:', data);
-    
+
     document.getElementById('content').innerText = JSON.stringify(data);
   } catch (err) {
     console.error('Falha na requisição:', err.message);
@@ -31,7 +31,7 @@ import { sseStream } from 'atomic-query';
 
 async function startStream() {
   const output = document.getElementById('chat-output');
-  
+
   try {
     // Itera sobre o stream de forma assíncrona
     for await (const chunk of sseStream('/api/ai-chat')) {
@@ -62,7 +62,7 @@ api.query.subscribe((key, type, newData) => {
 // Em outro lugar do seu código (ex: um modal de edição)
 async function updateProfile(newName) {
   await api.patch('/profile', { name: newName });
-  
+
   // Atualiza o cache manualmente e notifica todos os "subscribers" acima
   await api.query.setData('/profile', { name: newName });
 }
@@ -77,11 +77,13 @@ import { createAtom, retryMiddleware } from 'atomic-query';
 
 const resilientApi = createAtom({ baseUrl: 'https://api.unstable.com' });
 
-resilientApi.use(retryMiddleware({
-  retries: 5,
-  baseDelay: 1000, // Começa com 1s de espera
-  shouldRetry: (err) => err.response?.status === 503 // Apenas se o servidor estiver ocupado
-}));
+resilientApi.use(
+  retryMiddleware({
+    retries: 5,
+    baseDelay: 1000, // Começa com 1s de espera
+    shouldRetry: (err) => err.response?.status === 503, // Apenas se o servidor estiver ocupado
+  }),
+);
 
 async function fetchData() {
   // Isso vai tentar até 5 vezes automaticamente antes de falhar

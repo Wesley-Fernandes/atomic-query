@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   --color-bg: #030014;
@@ -6,9 +6,9 @@
   --color-secondary: #2e00a3;
   --color-accent: #00f2ff;
   --color-glass-border: rgba(255, 255, 255, 0.1);
-  --font-headings: "Space Grotesk", sans-serif;
-  --font-body: "Inter", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
+  --font-headings: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
   --background-image-hero-gradient: radial-gradient(circle at 50% -20%, #1a005c 0%, #030014 70%);
 }
 
@@ -17,7 +17,12 @@
     @apply bg-bg text-gray-200 antialiased font-body;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-headings tracking-tight;
   }
 

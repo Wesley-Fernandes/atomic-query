@@ -14,7 +14,12 @@ export default function Navbar() {
             <BookOpen className="w-5 h-5" />
             Docs
           </Link>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+          <a
+            href="https://github.com/Wesley-Fernandes/atomic-query"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-secondary"
+          >
             <GitFork className="w-5 h-5" />
             GitHub
           </a>
